@@ -67,14 +67,6 @@ class MusicLibraryController
     end.compact.each.with_index(1) do |song, index|
       puts "#{index}. #{song.name} - #{song.genre.name}"
     end
-
-    # Song.all.map do |song|
-    #   song if song.artist.name == input
-    # end.compact.sort_by do |song|
-    #   song.name
-    # end.each.with_index(1) do |song, index|
-    #   puts "#{index}. #{song.name} - #{song.genre.name}"
-    # end
   end
 
   def list_songs_by_genre
@@ -86,21 +78,13 @@ class MusicLibraryController
     end.compact.each.with_index(1) do |song, index|
       puts "#{index}. #{song.artist.name} - #{song.name}"
     end
-
-    # Song.all.map do |song|
-    #   song if song.genre.name == input
-    # end.compact.sort_by do |song|
-    #   song.name
-    # end.each.with_index(1) do |song, index|
-    #   puts "#{index}. #{song.artist.name} - #{song.name}"
-    # end
   end
 
   def play_song
     puts "Which song number would you like to play?"
     input = gets.strip.to_i
-
     song = alphabetized_songs[input - 1]
+
     if input < alphabetized_songs.size && input > 0
       puts "Playing #{song.name} by #{song.artist.name}"
     end
@@ -111,6 +95,4 @@ class MusicLibraryController
   end
 
 end
-# .sort_by do |song|
-#   song.name
-# end.
+

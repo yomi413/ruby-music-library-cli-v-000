@@ -77,9 +77,9 @@ class MusicLibraryController
 
     Song.all.map do |song|
       song if song.genre.name == input
-    end.each.with_index(1) do |song, index|
+    end.alphabetized_songs.each.with_index(1) do |song, index|
       puts "#{index}. #{song.artist.name} - #{song.name}"
-    end
+    end.compact
 
     # Song.all.map do |song|
     #   song if song.genre.name == input

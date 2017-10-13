@@ -75,7 +75,7 @@ class MusicLibraryController
     puts "Please enter the name of a genre:"
     input = gets.strip
 
-    alphabetized_songs.map do |song|
+    Song.all.map do |song|
       song if song.genre.name == input
     end.each.with_index(1) do |song, index|
       puts "#{index}. #{song.artist.name} - #{song.name}"

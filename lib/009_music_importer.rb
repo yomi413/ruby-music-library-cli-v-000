@@ -8,7 +8,6 @@ class MusicImporter
   def files
     Dir[@path+"/*.mp3"].collect do |file|
       file.split("/").last
-      # binding.pry
     end
   end
 
